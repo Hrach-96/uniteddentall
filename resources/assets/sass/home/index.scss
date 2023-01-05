@@ -1,0 +1,13 @@
+.insurance,.why-us{
+  padding: 85px 0 120px;
+  @include mq($media-md){
+    padding: 30px 15px;
+  }
+}
+.insurance{
+  .media{
+    .title{
+      max-width: 300px;
+    }
+  }
+}

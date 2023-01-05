@@ -1,0 +1,162 @@
+.body-type{
+  width: 158px;
+  height: 428px;
+  padding: 7px;
+  background: $white;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: border-color .3s ease;
+  @include mq($media-md){
+    width: 110px;
+    height: 300px;
+  }
+  &:hover,&.active{
+    border-color: $black;
+    transition: border-color .3s ease;
+    .body-type-desc{
+      opacity: 1;
+      transition: opacity .3s ease;
+    }
+  }
+  & > img{
+    width: 100px;
+    margin: 15px auto 32px;
+    display: block;
+    @include mq($media-md){
+      width: 60px;
+      margin: 8px auto 22px;
+    }
+  }
+  &-icon{
+    text-align: center;
+    margin-bottom: 17px;
+    @include mq($media-md){
+      margin-bottom: 12px;
+    }
+    & > i{
+      border: 1px solid $black;
+      font-size: 25px;
+      @include mq($media-md){
+        font-size: 17px;
+      }
+    }
+  }
+  &-name{
+    font-size: 14px;
+    font-family: $font-bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 33px;
+    @include mq($media-md){
+      font-size: 9px;
+      margin-bottom: 15px;
+    }
+  }
+  &-desc{
+    font-size: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .3s ease;
+    line-height: 14px;
+  }
+  &-container{
+    padding: 45px 0;
+    @include mq(false,$media-md){
+      justify-content: center;
+    }
+    @include mq($media-sm){
+      padding: 12px 0 45px;
+    }
+  }
+  &-custom{
+    background: #E8E8E8;
+    padding: 22px 37px;
+    @include mq($media-sm){
+      padding: 22px 10px;
+    }
+    &-title{
+      font-size: 16px;
+      font-family: $font-bold;
+      margin-bottom: 23px;
+      text-align: center;
+    }
+    &-input{
+      height: 31px;
+      border: 1px solid #D0D0D0;
+      padding: 5px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: box-shadow .5s ease;
+      &:hover{
+        box-shadow: 0px 3px 6px #bbbbbb;
+        transition: box-shadow .5s ease;
+      }
+      .name{
+        font-size: 13px;
+        @include mq($media-xs){
+          font-size: 10px;
+        }
+      }
+      .unit{
+        font-size: 8px;
+        color: #D0D0D0;
+      }
+      & > input{
+        max-width: 35px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #D0D0D0;
+        font-size: 12px;
+      }
+    }
+    .button{
+      height: 31px;
+      font-size: 14px;
+      font-family: $font-light;
+    }
+  }
+  &-modal{
+    position: relative;
+    background: $white;
+    box-shadow: 0px 3px 6px rgba(0,0,0,16%);
+    width: 925px;
+    max-width: 925px;
+    margin: auto;
+    @include mq($media-md){
+      width: 100%;
+      max-width: 692px;
+      padding: 107px 70px;
+    }
+    @include mq($media-sm){
+      padding: 0 !important;
+    }
+    &-container{
+      @include mq($media-sm, $media-md){
+        box-shadow: 0px 3px 6px rgba(0,0,0,16%);
+      }
+    }
+    &-title{
+      font-size: 22px;
+      text-align: center;
+      padding-top: 33px;
+      @include mq($media-sm){
+        width: 200px;
+        margin: auto;
+      }
+    }
+    .close{
+      position: absolute;
+      right: 30px;
+      top: 25px;
+      cursor: pointer;
+      & > i{
+        font-size: 33px;
+      }
+    }
+  }
+}
+#body-type-popup-content.fancybox-content{
+  padding: 0;
+}

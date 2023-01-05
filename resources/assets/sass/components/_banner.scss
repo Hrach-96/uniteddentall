@@ -1,0 +1,117 @@
+.banner{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.1);
+  &.home{
+    height: 600px;
+    @include mq($media-md, $media-lg){
+       height: 484px;
+    }
+    @include mq($media-sm, $media-md){
+      height: 375px;
+    }
+    @include mq($media-sm){
+      height: auto;
+    }
+    .banner-slider{
+      position: absolute;
+      right: 110px;
+      width: 40%;
+      top: 50%;
+      transform: translateY(-50%);
+      @include mq($media-lg){
+        right: 20px;
+      }
+      @include mq($media-sm){
+        width: 100%;
+        position: static;
+        margin-top: 30px;
+        transform: none;
+      }
+      .slick-track {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  &.page{
+    height: 484px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include mq($media-sm, $media-md){
+      height: 375px;
+    }
+    @include mq($media-sm){
+      height: auto;
+      background-image: none !important;
+      background-color: $white;
+    }
+    .banner-content{
+      padding: 90px 0 35px;
+      @include mq($media-sm,$media-lg){
+        padding: 50px 0 70px;
+      }
+      @include mq($media-sm){
+        padding: 30px 15px;
+      }
+    }
+  }
+  &.full{
+    height: 100vh;
+    background-size: cover;
+    background-position: top;
+  }
+  &-title{
+    font-size: 52px;
+    margin-bottom: 40px;
+    max-width: 390px;
+    font-family: $font-medium;
+    @include mq($media-md){
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+  }
+  &-text{
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 40px;
+    max-width: 512px;
+    font-family: $font-light;
+    @include mq($media-md){
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+  }
+  &-content{
+    padding: 100px 0 135px;
+    @include mq($media-sm,$media-lg){
+      padding: 50px 0 70px;
+    }
+    @include mq($media-sm){
+      padding: 30px 15px;
+    }
+  }
+  .container,.row{
+    height: inherit;
+  }
+  .slider-track {
+    transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  &-slider{
+    .item {
+      height: 100%;
+      position: relative;
+      z-index: 1;
+      vertical-align: bottom;
+      img {
+        transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+        transform: scale(1.2);
+      }
+    }
+    .slick-active img {
+      transform: scale(1);
+    }
+  }
+}

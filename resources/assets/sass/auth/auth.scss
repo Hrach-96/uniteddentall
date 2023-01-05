@@ -1,0 +1,60 @@
+.auth{
+  &-container{
+    width: 95%;
+    max-width: 945px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+    border-radius: 10px;
+    padding: 105px 97px;
+    margin: 95px auto;
+    @include mq($media-md){
+      padding: 50px 20px;
+    }
+    .forget-password,#remember{
+      font-size: 14px;
+      font-family: $font-light;
+      color: $text-color-light;
+    }
+    .forget-password{
+      float: right;
+      @include mq($media-sm){
+        float: none;
+      }
+    }
+    &.login{
+      max-width: 472px;
+      padding: 60px;
+      @include mq($media-md){
+        padding: 50px 20px;
+      }
+    }
+  }
+  &-title{
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: $text-color;
+    @include mq($media-md){
+      font-size: 18px;
+    }
+    & > span a{
+      text-decoration: none;
+      color: $text-color;
+    }
+    & > span.active{
+      font-family: $font-bold;
+    }
+  }
+  &-social{
+    font-size: 18px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mq($media-md){
+      font-size: 14px;
+    }
+    & > i{
+      font-size: 30px;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+// Fonts
+@import "fonts";
+
+// Variables
+@import 'variables';
+@import "grid/grid";
+@import "reset";
+@import "mixins";
+@import "components/index";
+@import "layout/index";
+@import "home/index";
+@import "partials/index";
+@import "auth/auth";
+@import "page/page";
+@import "error/index";
+@import "testimonials/testimonials";
+@import "doctors/index";
+@import "blog/index";
+
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  min-width: 320px;
+  height: 100%;
+}
+
+body{
+  font-family: $font-regular;
+  font-size: $font-size-base;
+  color: $text-color;
+  line-height: 1.2;
+  @include mq($media-md){
+    font-size: 16px;
+  }
+}
+
+.wrapper{
+  max-width: 100%;
+  padding: 0 40px;
+  @include mq($media-lg){
+    padding: 0px 15px;
+  }
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

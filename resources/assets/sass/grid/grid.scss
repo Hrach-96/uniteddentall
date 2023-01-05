@@ -1,0 +1,85 @@
+/*
+@ Flexbox Grid Version 1.5.0  - https://github.com/thealico/flexboxgrid
+@ Front-end Developer by Ali Akman (alico) 
+@ http://alico.me  */
+
+@import "set";
+@import "mix";
+
+#{$select-row}           	{ display: flex; flex-flow:row wrap; box-sizing: border-box; margin-left:(-$gut/2); margin-right: (-$gut/2) }
+#{$select-col}		      	{ flex: 1 1 0% ; box-sizing: border-box; padding-left:($gut/2); padding-right:($gut/2); padding-bottom:$gut }
+#{$select-col-}     	    { flex:none }
+#{$select-colcol}           { flex: 1 1 0% }
+#{$select-colrow}           { margin-left:0; margin-right:0; padding-left:0; padding-right:0 }
+
+
+@include make-row-number(null);
+@include make-col-number(null);
+@include make-space(null);
+@include make-row-option(null);
+@include make-col-option(null);
+@include make-offset(null);
+@include make-order(null);
+
+
+@each $key, $value in $set-screen {
+	@media #{$value}{ 
+		@include make-row-number(-#{$key});
+		@include make-col-number(-#{$key});
+		@include make-space(-#{$key});
+		@include make-row-option(-#{$key}); 
+		@include make-col-option(-#{$key}); 
+		@include make-offset(-#{$key});
+		@include make-order(-#{$key});
+	}
+}
+@mixin col($col, $gutter:false){
+	@include col-number($col);
+	@if $gutter == true{
+		box-sizing: border-box; padding-left:($gut/2); padding-right:($gut/2); padding-bottom:$gut
+	}
+}
+
+@mixin mq($min, $max: false, $orientation: false) {
+	@if not $max {
+		@media (max-width: $min - 1) {
+			@content;
+		}
+	}
+	@else if not $min{
+		@media (min-width: #{$max}) {
+			@content;
+		}
+	}
+	@else {
+		@if not $orientation {
+			@media (min-width: #{$min}) and (max-width: #{$max}) {
+				@content;
+			}
+		} @else {
+			@media (min-width: #{$min}) and (max-width: #{$max}) and (orientation: #{$orientation}) {
+				@content;
+			}
+		}
+	}
+}
+
+@if $markup == true {
+	.#{$namespace}container {
+		max-width: $media-lg - 40px;
+		@include mq($media-md, $media-lg){
+			max-width: $media-md - 40px;
+		}
+		@include mq($media-sm, $media-md){
+			max-width: $media-sm - 40px;
+		}
+		@include mq($media-sm){
+			max-width: 100%;
+		}
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.#{$namespace}container-fluid {
+		width: 100%;
+	}
+}

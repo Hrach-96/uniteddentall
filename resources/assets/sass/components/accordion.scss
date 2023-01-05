@@ -1,0 +1,81 @@
+.accordion {
+  list-style: none;
+  padding: 0;
+  .inner {
+    overflow: hidden;
+    display: none;
+    padding: 30px 98px;
+    line-height: 26px;
+    @include mq($media-md){
+      padding: 20px 0;
+      font-size: 14px;
+    }
+    li{
+      a.active{
+        font-family: $font-bold;
+      }
+    }
+    //&.show {
+    //  display: block;
+    //}
+  }
+
+  li {
+    a.toggle {
+      width: 100%;
+      display: block;
+      transition: background .3s ease;
+      position: relative;
+      border-top: 1px solid $text-color;
+      outline: none;
+      &:hover,&.active {
+        background: $cyan;
+        color: $white;
+        &:after{
+          border-color: $white;
+        }
+      }
+      &.active,&.opened{
+        &:after{
+          content: '-';
+          transition: transform .3s;
+        }
+      }
+      &:after{
+        content: '+';
+        width: 39px;
+        height: 39px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        speak: none;
+        font-family: $font-light;
+        text-transform: none;
+        transition: transform .3s;
+        border: 1px solid $cyan;
+        border-radius: 50%;
+        @include mq($media-md){
+          left: 10px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    a{
+      padding: 20px 98px;
+      color: $cyan;
+      text-decoration: none;
+      display: block;
+      font-size: 28px;
+      @include mq($media-md){
+        padding: 20px 45px;
+        font-size: 16px;
+      }
+    }
+  }
+}

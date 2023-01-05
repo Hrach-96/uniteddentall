@@ -1,0 +1,86 @@
+select.app-select{
+  visibility: hidden;
+  height: 0;
+  display: none;
+}
+.app-select.has-error{
+  &+.selectize-control{
+    .selectize-input{
+      border-color: $red;
+      input{
+        @include placeholder-color($red);
+      }
+    }
+  }
+}
+.app-select{
+  &.selectize-control.body-select .selectize-dropdown {
+    .selectize-dropdown-content {
+      max-height: 240px;
+    }
+    .option{
+      &:first-child{
+        i{
+          display: none;
+        }
+      }
+      &:hover,&.active{
+        text-decoration: none !important;
+        & > i{
+          background: $black;
+          color: $white;
+        }
+      }
+    }
+  }
+  .selectize-input{
+    border: 1px solid $black;
+    padding: 8px 25px 8px 12px;
+    box-shadow: none;
+    border-radius: 0;
+    transition: all .1s ease;
+    &:hover{
+      border-color: $text-color-light;
+      transition: all .3s ease;
+    }
+    &.dropdown-active{
+      transition: all .1s ease;
+      border-color: transparent;
+      box-shadow: 0px 3px 6px rgba(0,0,0,16%);
+      + div{
+        border-color: transparent;
+        box-shadow: 0px 3px 6px rgba(0,0,0,16%);
+      }
+    }
+  }
+  .selectize-dropdown {
+    border: 1px solid $black;
+    background: #fff;
+    box-shadow:none;
+    border-radius: 0;
+    .option{
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:hover,&.active{
+        background-color: transparent;
+        color: $text-color;
+        text-decoration: underline;
+        & > span{
+          text-decoration: underline;
+        }
+      }
+      & > i{
+        font-size: 25px;
+        border: 1px solid $black;
+      }
+    }
+  }
+  .selectize-dropdown, .selectize-input, .selectize-input input {
+    color: $text-color;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}

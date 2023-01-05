@@ -1,0 +1,244 @@
+.header{
+  width: 100%;
+  transition: all 0.1s;
+  background: #f8f8f8;
+  border-bottom: 1px solid #dddddd;
+  @include mq($media-md){
+    padding: 0 15px;
+  }
+  &.fixed{
+    position: fixed;
+  }
+  &.sticky{
+    position: sticky;
+    top: 0;
+    margin-bottom: 30px;
+  }
+  &-logo{
+    display: inline-block;
+    width: 228px;
+    text-decoration: none;
+    @include mq($media-lg){
+      width: 100px;
+    }
+  }
+  &-nav{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    @include mq($media-md){
+      display: none;
+    }
+    & > li {
+      display: inline-block;
+      &:not(:last-child){
+        margin-right: 45px;
+        @include mq($media-lg){
+          margin-right: 15px;
+        }
+      }
+      &:hover,&.active{
+        & > a {
+          border-bottom: 2px solid $cyan;
+          padding-bottom: 5px;
+          font-weight: bold;
+        }
+      }
+      & > a{
+        color: $text-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        @include mq($media-lg){
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  &-top{
+    background: #dfe1e5;
+    height: 44px;
+    @include mq($media-md){
+      display: none;
+    }
+    & > div{
+      height: inherit;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 280px;
+      position: relative;
+    }
+    &-phone{
+      text-decoration: none;
+      font-size: 22px;
+      color: $blue;
+      & > i{
+        color: $text-color;
+        margin-right: 10px;
+        font-size: 15px;
+      }
+    }
+    &-social{
+      margin-right: 50px;
+      margin-left: 70px;
+      li{
+        display: inline-block;
+        &:not(:last-child){
+          margin-right: 11px;
+        }
+        a{
+          text-decoration: none;
+        }
+      }
+      img{
+        width: 23px;
+      }
+    }
+    &-btn{
+      position: absolute;
+      top: -2px;
+      right: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+  &-bottom{
+    height: 155px;
+    @include mq($media-md,$media-lg){
+      height: 70px;
+    }
+    @include mq($media-md){
+      height: 50px;
+    }
+    & > div{
+      height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  .hamburger{
+    display: block;
+    width: 22px;
+    height: 16px;
+    background-image: url("/img/svg/hamburger.svg");
+    cursor: pointer;
+  }
+}
+.navigation-slide{
+  width: 95%;
+  max-width: 320px;
+  background: $white;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  transform: translateX(120%);
+  transition: transform .5s ease;
+  &.active{
+    transform: translateX(0);
+    transition: transform .5s ease;
+    overflow: auto;
+  }
+  &-overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+  }
+  &-open{
+    display: none;
+    @include mq($media-md){
+      display: block;
+    }
+  }
+  &-close{
+    padding: 11px 0;
+    text-align: right;
+    img{
+      width: 24px;
+      cursor: pointer;
+    }
+  }
+  &.mobile-nav{
+    display: none;
+    @include mq($media-md){
+      display: block;
+    }
+  }
+}
+.mobile-nav{
+  padding: 0 30px 20px;
+  .nav{
+    text-align: right;
+    padding: 20px 0;
+    & > li{
+      margin-bottom: 20px;
+    }
+    li{
+      text-align: left;
+      &.active,&:hover{
+        & > a{
+          border-bottom: 2px solid $cyan;
+          font-weight: bold;
+        }
+      }
+      a{
+        text-decoration: none;
+        color: $text-color;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+    }
+  }
+  &-btn{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    border-radius: 0;
+    margin-top: 30px;
+  }
+  &-info-link{
+    display: block;
+    vertical-align: top;
+    margin-bottom: 20px;
+    li{
+      &:not(:last-child){
+        margin-bottom: 20px;
+      }
+      a{
+        text-decoration: none;
+        color: $text-color;
+        text-align: right;
+        font-size: 14px;
+        i{
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.social-links{
+  display: block;
+  vertical-align: top;
+  li{
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  img{
+    width: 23px;
+  }
+}

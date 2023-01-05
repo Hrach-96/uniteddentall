@@ -1,0 +1,45 @@
+.doctors{
+  padding: 85px 0 120px;
+  @include mq($media-md){
+    padding: 30px 15px;
+  }
+  .doctor{
+    &:not(:last-child){
+      border-bottom: 1px solid #c7c7c7;
+    }
+    padding-bottom: 50px;
+    padding-top: 50px;
+    .media-img{
+      margin-right: 50px;
+    }
+    .title{
+      font-size: 30px;
+    }
+    p{
+      max-height: 72px;
+      overflow: hidden;
+      transition: all .5s ease;&.active{
+      max-height: none;
+    }
+    }
+    .read-more{
+      text-decoration: none;
+      color: $cyan;
+      &.active{
+        span{
+          &:first-child{
+            display: none;
+          }
+          &:last-child{
+            display: block;
+          }
+        }
+      }
+      span{
+        &:last-child{
+          display: none;
+        }
+      }
+    }
+  }
+}

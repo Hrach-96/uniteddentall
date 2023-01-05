@@ -1,0 +1,129 @@
+.overflow-block{
+  position: relative;
+  &.full{
+    & > div{
+      flex-flow: nowrap;
+    }
+  }
+  &.lg{
+    @include mq($media-lg){
+      & > div{
+        flex-flow: nowrap;
+      }
+    }
+  }
+  &.md{
+    @include mq($media-md){
+      & > div{
+        flex-flow: nowrap;
+      }
+    }
+  }
+  &.sm{
+    @include mq($media-sm){
+      & > div{
+        flex-flow: nowrap;
+      }
+    }
+  }
+  & > div{
+    overflow-y: hidden;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    &::-webkit-scrollbar-button {
+      width: 0px;
+      height: 0px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #e1e1e1;
+      border: 0px none #ffffff;
+      border-radius: 20px;
+      transition: background .3s ease;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #ebebeb;
+      transition: background .3s ease;
+    }
+    &::-webkit-scrollbar-thumb:active {
+      background: #cbcbcb;
+      transition: background .3s ease;
+    }
+    &::-webkit-scrollbar-track {
+      background: #666666;
+      border: 0px none #ffffff;
+      border-radius: 20px;
+    }
+    &::-webkit-scrollbar-track:hover {
+      background: #666666;
+    }
+    &::-webkit-scrollbar-track:active {
+      background: #333333;
+    }
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+  }
+  .product{
+    min-width: 245px;
+  }
+}
+
+.zoom-in{
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  &__item{
+    transition: transform .5s ease;
+  }
+  &:hover {
+    .zoom-in__item{
+      transform: scale(1.1);
+      transition: transform .5s ease;
+    }
+  }
+}
+
+.plus,.minus{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  &:after,&:before{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: $black;
+    width: 17px;
+    height: 1px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: all .3s ease;
+    margin: auto;
+    transform: scale(.7);
+  }
+  &:hover{
+    background-color: $black;
+    &:before,&:after{
+      background-color: $white
+    }
+  }
+}
+.plus{
+  &:after{
+    transform: rotateZ(90deg) scale(.7)
+  }
+}
+
+.v-divider{
+  border-left:1px solid $black;
+  margin: 0 20px;
+  @include mq($media-sm){
+    margin: 0 7px;
+  }
+}

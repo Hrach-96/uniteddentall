@@ -1,0 +1,106 @@
+.blog-posts{
+    padding: 85px 0 120px;
+    @include mq($media-md){
+        padding: 30px 15px;
+    }
+}
+.blog-item{
+    text-decoration: none;
+    &__title{
+        margin-bottom: 25px;
+        font-size: 28px;
+        font-family: $font-bold;
+        color: $blue;
+    }
+    img{
+        width: 100%;
+    }
+    a{
+        text-decoration: none;
+        color:  $blue;
+        transition: all .5s ease;
+        display: inline-block;
+        &:hover{
+            opacity: .7;
+            transition: all .5s ease;
+        }
+    }
+    p{
+        margin-bottom: 15px;
+    }
+    &__date{
+        font-size: 14px;
+    }
+    &__more{
+        text-decoration: none;
+        color: $blue;
+        display: inline-block;
+    }
+    &__text{
+        line-height: 1.5;
+    }
+}
+.blog-content{
+    padding: 30px 30px 120px;
+    @include mq($media-md){
+        padding: 30px 15px;
+    }
+    background: $white;
+    position: relative;
+    margin-top: -200px;
+    border-top: 5px solid $cyan;
+    @include mq($media-lg){
+        margin-top: -100px;
+    }
+    @include mq($media-sm){
+        margin-top: 0 !important;
+    }
+
+    .blog-footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            text-decoration: none;
+            color: $blue;
+            font-family: $font-bold;
+            font-size: 24px;
+        }
+        .btn-book{
+            color: #fff04b;
+        }
+        .divider{
+            margin: 0 20px;
+            font-size: 32px;
+            font-family: $font-bold;
+        }
+    }
+}
+.blog-banner{
+    img{
+        width: 100%;
+    }
+}
+.blog-info{
+    p,span,a{
+        font-size: 14px;
+    }
+    a{
+        color: $cyan;
+        font-size: $font-bold;
+        text-decoration: none;
+    }
+    .share{
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        a{
+            width: 20px;
+            display: flex;
+            margin-right: 10px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}

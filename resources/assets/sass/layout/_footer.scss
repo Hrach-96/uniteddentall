@@ -1,0 +1,102 @@
+.footer{
+  background: $gray;
+  @include mq($media-sm){
+    padding-right: $padding-lr;
+    padding-left: $padding-lr;
+  }
+  & > .container{
+    padding: 50px 0;
+    & > .row{
+      @include mq($media-sm){
+        text-align: center;
+        & > div{
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  &-logo{
+    max-width: 155px;
+  }
+  &-section{
+    &-title{
+      color: $cyan;
+      margin-bottom: 30px;
+    }
+    &-list{
+      color: #999;
+      &:not(:last-child){
+        margin-bottom: 22px;
+      }
+      li{
+        margin-bottom: 10px;
+        @include mq($media-md){
+          font-size: 14px;
+        }
+        i{
+          width: 24px;
+          display: inline-block;
+          font-size: 16px;
+          &:before{
+            color: #999;
+          }
+          &.icon-mail{
+            font-size: 12px;
+          }
+        }
+        a{
+          color: #999;
+          text-decoration: none;
+          @include mq($media-md){
+            font-size: 14px;
+          }
+        }
+        & > span{
+          display: block;
+          margin-top: 10px;
+        }
+      }
+      &.inline{
+        li{
+          display: inline-block;
+          margin-bottom: 0;
+          &:not(:last-child){
+            margin-right: 10px;
+          }
+          i{
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+  &-copy{
+    color: #999999;
+    text-align: center;
+    padding-bottom: 25px;
+    font-size: 16px;
+  }
+  &-links{
+    li{
+      display: inline-block;
+      a{
+        color: #999999;
+        text-decoration: none;
+        transition: color .3s ease;
+        &:hover{
+          color: $white;
+          transition: color .3s ease;
+        }
+      }
+    }
+  }
+  &-dev{
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    a{
+      color: #999;
+      text-decoration: none;
+    }
+  }
+}

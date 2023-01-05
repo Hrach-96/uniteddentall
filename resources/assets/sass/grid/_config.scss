@@ -1,0 +1,59 @@
+// ----------------------
+//
+// SETTINGS
+//
+// ----------------------
+// ----------------------
+// Namespace
+//
+// To avoid conflicts, Wire used custom namespace,
+// Set 'name-' to avoid conflicts with others frameworks. '' by default.
+// ----------------------
+$namespace: '' !default;
+
+// ----------------------
+// Markup Mode
+//
+// Compile Wire.css with markup, if you only need extend
+// the styles in Sass, set this in 'false'.
+// Set 'true' or 'false'. True by default.
+// ----------------------
+$markup: true !default;
+
+// ----------------------
+// Debug Mode
+//
+// Highlight markup errors.
+// Set 'true' or 'false'. False by default.
+// ----------------------
+$debug: false !default;
+
+
+
+// ----------------------
+//
+// VARIABLES
+//
+// ----------------------
+// ----------------------
+// Defaults Sizes (Base 10 to simplify)
+// ----------------------
+$font-size-base: 16 !default;
+$line-height-base: 1.45 !default;
+$border-radius: 3px !default;
+
+// ----------------------
+// Grid
+// ----------------------
+$max-columns: 12 !default;
+$base-gutter: 2% !default;
+
+// ----------------------
+// Breakpoints
+// ----------------------
+$media-lg: 1180px;
+$media-md: 960px;
+$media-sm: 768px;
+$media-xs: 640px;
+$media-ms: 376px;
+

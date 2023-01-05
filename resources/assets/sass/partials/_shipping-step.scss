@@ -1,0 +1,39 @@
+.shipping-steps{
+  &-section{
+    background-color: #f7f7f7;
+    padding: 50px 0;
+    .secondary{
+      padding-top: 0px;
+    }
+  }
+  .step{
+    text-align: center;
+    @include mq(false, $media-lg){
+      padding-left: 55px !important;
+      padding-right: 55px !important;
+    }
+    &__img{
+      border-radius: 100%;
+      background-color: $white;
+      border: 1px solid #EBEBEB;
+      width: 76px;
+      height: 76px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 10px;
+      & > span{
+        font-size: 39px;
+        color: $text-color-light;
+      }
+    }
+    &__title{
+      font-family: $font-bold;
+      margin-bottom: 10px;
+    }
+    &__desc{
+      line-height: 22px;
+      font-family: $font-light;
+    }
+  }
+}

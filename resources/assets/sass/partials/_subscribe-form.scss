@@ -1,0 +1,62 @@
+.subscribe-form{
+  &-section{
+    @include mq(false, $media-md){
+      padding: 0 77px;
+    }
+    @include mq($media-sm){
+      padding: 20px;
+    }
+  }
+  %reset{
+    -webkit-appearance: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+  %padding{
+    padding: 15px 27px;
+  }
+  &.row{
+    .subscribe-form__input,.subscribe-form__btn{
+      @extend %padding;
+    }
+  }
+  %font-subscribe{
+    font-family: $font-light;
+    font-size: 18px;
+    @include mq($media-ms){
+      font-size: 14px;
+    }
+  }
+  %border-bottom{
+    border-bottom: 1px solid $black;
+  }
+  &__input{
+    @extend %reset;
+    @extend %padding;
+    @extend %font-subscribe;
+    border: none;
+    @extend %border-bottom;
+    @include placeholder(){
+      color: $text-color-light;
+    }
+    @include mq($media-sm){
+      text-align: center;
+    }
+  }
+  &__btn{
+    @extend %reset;
+    @extend %padding;
+    @extend %font-subscribe;
+    border: none;
+    @extend %border-bottom;
+    color: $black;
+  }
+  @include mq($media-sm){
+    .subscribe-form__btn{
+      border: none;
+      text-decoration: underline;
+    }
+  }
+}

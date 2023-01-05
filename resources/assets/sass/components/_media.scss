@@ -1,0 +1,57 @@
+.media{
+  display: flex;
+  flex-wrap: wrap;
+  &.responsive{
+    @include mq($media-sm){
+      text-align: center;
+      .media-img{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .content{
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+  .title{
+    font-size: 24px;
+    color: $cyan;
+    margin-bottom: 22px;
+    font-family: $font-medium;
+    &.is-uppercase{
+      text-transform: uppercase;
+    }
+    @include mq($media-md){
+      font-size: 18px;
+    }
+  }
+  p{
+    font-family: $font-light;
+    color: $text-color-bold;
+    line-height: 24px;
+    &:not(:last-child){
+      margin-bottom: 30px;
+    }
+    @include mq($media-md){
+      font-size: 14px;
+    }
+  }
+  &-img{
+    i{
+      font-size: 68px;
+    }
+    margin-right: 17px;
+  }
+  .is-rounded{
+    border-radius: 50%;
+  }
+  .is-bordered{
+    border: 2px solid #c7c7c7;
+  }
+  .icon-comprehensive-dentistry-icon{
+    margin-top: -4px;
+    display: block;
+  }
+}

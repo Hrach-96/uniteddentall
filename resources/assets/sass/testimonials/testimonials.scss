@@ -1,0 +1,23 @@
+.testimonials{
+  background: $blue;
+  padding: 100px 0;
+  @include mq($media-md){
+    padding: 30px 15px;
+  }
+  &-slider{
+    padding: 0 25px;
+    .message{
+      font-family: $font-light;
+      font-style: italic;
+    }
+    .message,.author{
+      font-size: 20px;
+      line-height: 30px;
+      color: $white;
+      text-align: center;
+      @include mq($media-md){
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.input{
+  width: 100%;
+  height: 55px;
+  border: 1px solid #9a9a9a;
+  border-radius: 10px;
+  padding: 0 30px;
+  color: #9a9a9a;
+  transition: border-color .3s ease;
+  @include placeholder-color(#9a9a9a);
+  &:focus,&:hover{
+    transition: border-color .3s ease;
+    border-color: #9a9a9a;
+  }
+  &.has-error{
+    border-color: $red;
+    color: $red;
+    @include placeholder-color(#f32020);
+  }
+  &-submit{
+    appearance: none;
+    border: none;
+    float: right;
+  }
+  &.is-textarea{
+    max-width: 100%;
+    height: 95px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    line-height: 22px;
+  }
+}
+textarea.input{
+  padding: 18px 30px;
+  height: 170px;
+}
+.help-block{
+  font-size: 12px;
+  color: $red;
+  margin: 10px 0;
+  display: inline-block;
+}
