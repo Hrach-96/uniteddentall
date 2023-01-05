@@ -36,7 +36,7 @@
 
         </li>
 
-        <li class="{{ request()->is('posts/news') ? 'active' : '' }}"><a href="{{route('blog', ['news'])}}">News</a></li>
+        <!-- <li class="{{ request()->is('posts/news') ? 'active' : '' }}"><a href="{{route('blog', ['news'])}}">News</a></li> -->
 
         <li class="{{ request()->is('posts/blog') ? 'active' : '' }}"><a href="{{route('blog', ['blog'])}}">Blog</a></li>
 
@@ -128,7 +128,7 @@
 
                 </li>
 
-                <li class="{{ request()->is('posts/news') ? 'active' : '' }}"><a href="{{route('blog', ['news'])}}">News</a></li>
+                <!-- <li class="{{ request()->is('posts/news') ? 'active' : '' }}"><a href="{{route('blog', ['news'])}}">News</a></li> -->
 
                 <li class="{{ request()->is('posts/blog') ? 'active' : '' }}"><a href="{{route('blog', ['blog'])}}">Blog</a></li>
 
