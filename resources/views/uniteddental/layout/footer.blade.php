@@ -14,7 +14,6 @@
                         <li><a href="{{route('page', ['services'])}}">Services</a></li>
                         <li><a href="{{route('page', ['new-patients'])}}">New patients</a></li>
                         <li><a href="{{route('office-gallery')}}">Gallery</a></li>
-                        <li><a href="{{route('blog', ['news'])}}">News</a></li>
                         <li><a href="{{route('blog', ['blog'])}}">Blog</a></li>
                         <li><a href="{{route('page', ['contact-us'])}}">Contact us</a></li>
                     </ul>
